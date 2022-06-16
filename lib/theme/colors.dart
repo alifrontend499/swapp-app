@@ -19,5 +19,16 @@ const appPrimaryBtnColorOnPrimary = Colors.black;
 const appWhiteBtnColor = Colors.white;
 const appWhiteBtnColorOnPrimary = Colors.black;
 
+// black btn
+const appBlackBtnColor = Colors.black;
+const appBlackBtnColorOnPrimary = Colors.white;
+
 // TEXT COLORS
 const appTextColorPrimary = Color.fromRGBO(76, 163, 248, 1);
+
+// BORDER COLORS
+const appBorderColorPrimary = Color.fromRGBO(76, 163, 248, 1);
+
+// PROGRESS BAR COLORS
+const appProgressBarType1BgColor = Color.fromRGBO(229, 229, 229, 1);
+const appProgressBarType1BarColor = Color.fromRGBO(156, 157, 149, 1);

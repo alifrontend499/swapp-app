@@ -94,7 +94,7 @@ class _InitialScreenState extends State<InitialScreen> {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, signupScreenRoute);
+                Navigator.pushNamed(context, signupScreenRouteStep1);
               },
               child: const Text('Sign Up'),
               style: btnStylesSecondary,

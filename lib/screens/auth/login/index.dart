@@ -122,105 +122,119 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-
-
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ElevatedButton(
-                onPressed: () { },
-                child: const Text('Continue with Facebook'),
-                style: btnStylesFacebook,
-              ),
-              const SizedBox(height: 10),
-
-              ElevatedButton(
-                onPressed: () { },
-                child: const Text('Continue with Google'),
-                style: btnStylesGoogle,
-              ),
-              const SizedBox(height: 10),
-
-              ElevatedButton(
-                onPressed: () { },
-                child: const Text('Continue with Apple'),
-                style: btnStylesApple,
-              ),
-              const SizedBox(height: 40),
-
-              Text(
-                'OR',
-                style: orTextStyles,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 60),
-
-              Text(
-                'Email Address',
-                style: labelTextStyles,
-              ),
-              const SizedBox(height: 5),
-              const TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  hintText: 'Enter your email',
-                  border: OutlineInputBorder(),
-                  contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-                ),
-              ),
-              const SizedBox(height: 15),
-
-              Text(
-                'Password',
-                style: labelTextStyles,
-              ),
-              const SizedBox(height: 5),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Enter your password',
-                  border: const OutlineInputBorder(),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isPasswordVisible = !isPasswordVisible;
-                      });
-                    },
-                    icon: isPasswordVisible
-                        ? const Icon(Icons.visibility_off)
-                        : const Icon(Icons.visibility),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+        child: GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ElevatedButton(
+                    onPressed: () { },
+                    child: const Text('Continue with Facebook'),
+                    style: btnStylesFacebook,
                   ),
-                ),
-              ),
-              const SizedBox(height: 20),
+                  const SizedBox(height: 10),
 
-              ElevatedButton(
-                onPressed: () { },
-                child: const Text('Continue with Apple'),
-                style: btnStylesSubmit,
-              ),
-              const SizedBox(height: 40),
+                  ElevatedButton(
+                    onPressed: () { },
+                    child: const Text('Continue with Google'),
+                    style: btnStylesGoogle,
+                  ),
+                  const SizedBox(height: 10),
 
-              Text(
-                'Forgot Password?',
-                style: additionalTextStyles,
-                textAlign: TextAlign.center,
+                  ElevatedButton(
+                    onPressed: () { },
+                    child: const Text('Continue with Apple'),
+                    style: btnStylesApple,
+                  ),
+                  const SizedBox(height: 40),
+
+                  Text(
+                    'OR',
+                    style: orTextStyles,
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 60),
+
+                  Text(
+                    'Email Address',
+                    style: labelTextStyles,
+                  ),
+                  const SizedBox(height: 5),
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      hintText: 'Enter your email',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: const BorderSide(color: Colors.red, width: 2.0)
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+
+                  Text(
+                    'Password',
+                    style: labelTextStyles,
+                  ),
+                  const SizedBox(height: 5),
+                  TextField(
+                    obscureText: isPasswordVisible,
+                    decoration: InputDecoration(
+                      hintText: 'Enter your password',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40),
+                          borderSide: const BorderSide(color: Colors.red, width: 1)
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            isPasswordVisible = !isPasswordVisible;
+                          });
+                        },
+                        icon: isPasswordVisible
+                            ? const Icon(Icons.visibility_off)
+                            : const Icon(Icons.visibility),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+
+                  ElevatedButton(
+                    onPressed: () { },
+                    child: const Text('Log In'),
+                    style: btnStylesSubmit,
+                  ),
+                  const SizedBox(height: 40),
+
+                  GestureDetector(
+                    child: Text(
+                      'Forgot Password?',
+                      style: additionalTextStyles,
+                      textAlign: TextAlign.center,
+                    ),
+                    onTap: () => Navigator.pushNamed(context, forgotPasswordScreenRoute),
+                  ),
+                  const SizedBox(height: 20),
+                  GestureDetector(
+                    child: Text(
+                      'Create Account',
+                      style: additionalTextStyles,
+                      textAlign: TextAlign.center,
+                    ),
+                    onTap: () => Navigator.pushNamed(context, signupScreenRouteStep1),
+                  ),
+                  const SizedBox(height: 15),
+                ],
               ),
-              const SizedBox(height: 15),
-              Text(
-                'Create Account',
-                style: additionalTextStyles,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 15),
-            ],
+            ),
           ),
         ),
       )
