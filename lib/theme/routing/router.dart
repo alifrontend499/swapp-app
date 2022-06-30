@@ -13,6 +13,9 @@ import 'package:app/screens/auth/signup/steps/signupStepFive.dart';
 import 'package:app/screens/auth/signup/steps/signupStepFour.dart';
 import 'package:app/screens/auth/signup/steps/signupStepThree.dart';
 
+// content main
+import 'package:app/screens/content/index.dart';
+
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch(settings.name) {
     case initialScreenRoute:
@@ -38,6 +41,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     case signupScreenRouteStep5:
       return MaterialPageRoute(builder: (context) => const SignupStepFiveScreen());
+
+    case contentMainScreenRoute:
+      return MaterialPageRoute(builder: (context) => const ContentMainScreen());
 
     default:
       return MaterialPageRoute(builder: (context) => const InitialScreen());

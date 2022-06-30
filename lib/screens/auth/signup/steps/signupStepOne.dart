@@ -47,54 +47,61 @@ class _SignupStepOneScreenState extends State<SignupStepOneScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sign Up'),
-        titleTextStyle: GoogleFonts.montserrat(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.black
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Sign Up'),
+          titleTextStyle: GoogleFonts.montserrat(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Colors.black
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.chevron_left),
+            color: Colors.black,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
-        centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.chevron_left),
-          color: Colors.black,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-          child: GestureDetector(
-            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+          child: Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'What’s your email?',
-                      style: additionalTextStyles,
-                    ),
-                    const SizedBox(height: 15),
+                Expanded(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'What’s your email?',
+                            style: additionalTextStyles,
+                          ),
+                          const SizedBox(height: 15),
 
-                    TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        hintText: 'Enter your email',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(40),
-                            borderSide: const BorderSide(color: Colors.red, width: 2.0)
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                          TextField(
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              hintText: 'Enter your email',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(40),
+                                  borderSide: const BorderSide(color: Colors.red, width: 2.0)
+                              ),
+                              contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ],
+                    )
                 ),
+
                 Column(
                   children: [
                     Column(
@@ -114,23 +121,23 @@ class _SignupStepOneScreenState extends State<SignupStepOneScreen> {
                             backgroundColor: appProgressBarType1BgColor,
                             minHeight: 10,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(height: 15),
                     Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: ElevatedButton(
-                          onPressed: () => Navigator.pushNamed(context, signupScreenRouteStep2),
-                          child: const Text('Next Step'),
-                          style: btnStylesSubmit,
-                        ),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: ElevatedButton(
+                        onPressed: () => Navigator.pushNamed(context, signupScreenRouteStep2),
+                        child: const Text('Next Step'),
+                        style: btnStylesSubmit,
+                      ),
                     ),
                   ],
                 )
               ],
             ),
-          )
+        ),
       ),
     );
   }
