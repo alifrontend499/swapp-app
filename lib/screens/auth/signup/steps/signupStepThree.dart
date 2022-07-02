@@ -11,6 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 // colors
 import 'package:app/theme/colors.dart';
+
+// image picker
 import 'package:image_picker/image_picker.dart';
 
 class SignupStepThreeScreen extends StatefulWidget {

@@ -10,5 +10,6 @@ const String signupScreenRouteStep5 = 'signup_screen_step_5';
 const String signupScreenRouteStep6 = 'signup_screen_step_6';
 
 const String contentMainScreenRoute = 'content_main_screen';
+const String messagesViewScreenRoute = 'messages_view_screen';
 
 const String forgotPasswordScreenRoute = 'forgot_password_screen';

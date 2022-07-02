@@ -12,6 +12,7 @@ import 'package:app/screens/auth/signup/steps/signupStepTwo.dart';
 import 'package:app/screens/auth/signup/steps/signupStepFive.dart';
 import 'package:app/screens/auth/signup/steps/signupStepFour.dart';
 import 'package:app/screens/auth/signup/steps/signupStepThree.dart';
+import 'package:app/screens/content/messagesContent/messagesView/messagesView.dart';
 
 // content main
 import 'package:app/screens/content/index.dart';
@@ -44,6 +45,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     case contentMainScreenRoute:
       return MaterialPageRoute(builder: (context) => const ContentMainScreen());
+
+    case messagesViewScreenRoute:
+      return MaterialPageRoute(builder: (context) => const MessagesViewScreen());
 
     default:
       return MaterialPageRoute(builder: (context) => const InitialScreen());
