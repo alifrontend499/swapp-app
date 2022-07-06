@@ -19,9 +19,9 @@ class ContentMainScreen extends StatefulWidget {
 class _ContentMainScreenState extends State<ContentMainScreen> {
   int currentIndex = 0;
   final screens= [
+    const StatusContent(),
     const MessagesContent(),
     const FavouritesContent(),
-    const StatusContent(),
     const SpotsContent(),
   ];
 
@@ -45,6 +45,11 @@ class _ContentMainScreenState extends State<ContentMainScreen> {
         selectedItemColor: appPrimaryColor,
         items: const [
           BottomNavigationBarItem(
+              label: "Map",
+              icon: Icon(Icons.map_outlined)
+          ),
+
+          BottomNavigationBarItem(
             label: "Messages",
             icon: Icon(Icons.chat_bubble_outline),
           ),
@@ -52,11 +57,6 @@ class _ContentMainScreenState extends State<ContentMainScreen> {
           BottomNavigationBarItem(
             label: "Favourites",
             icon: Icon(Icons.bookmark_outline)
-          ),
-
-          BottomNavigationBarItem(
-              label: "Status",
-              icon: Icon(Icons.computer)
           ),
 
           BottomNavigationBarItem(

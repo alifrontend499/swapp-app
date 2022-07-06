@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:app/screens/content/messagesContent/messagesView/rightMenu/data/menu_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 // google fonts
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +14,9 @@ import 'package:image_picker/image_picker.dart';
 
 // menu items
 import 'package:app/screens/content/messagesContent/messagesView/rightMenu/modal/menu_item.dart';
+
+// routes
+import 'package:app/theme/routing/routing_constants.dart';
 
 class MessagesViewScreen extends StatefulWidget {
   const MessagesViewScreen({Key? key}) : super(key: key);
@@ -103,19 +105,31 @@ class _MessagesViewScreenState extends State<MessagesViewScreen> {
                       ),
                       child: Column(
                         children: [
-                          ClipRRect(
-                            child: Image.network(
-                              'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
-                              height: 60,
-                              width: 60,
-                              fit: BoxFit.cover,
+                          InkWell(
+                            onTap: () => Navigator.pushNamed(context, userProfileScreenRoute),
+                            borderRadius: BorderRadius.circular(5),
+                            splashColor: Colors.transparent,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                              child: Column(
+                                children: [
+                                  ClipRRect(
+                                    child: Image.network(
+                                      'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+                                      height: 60,
+                                      width: 60,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius: BorderRadius.circular(65.0),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  Text('Chris MitchellChris',
+                                      style: userNameStyles,
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(65.0),
-                          ),
-                          const SizedBox(height: 15),
-                          Text('Chris MitchellChris',
-                              style: userNameStyles,
-                              textAlign: TextAlign.center),
+                          )
                         ],
                       ),
                     ),
