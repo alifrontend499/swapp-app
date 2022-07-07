@@ -115,7 +115,7 @@ class _MessagesViewScreenState extends State<MessagesViewScreen> {
                                 children: [
                                   ClipRRect(
                                     child: Image.network(
-                                      'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+                                      'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
                                       height: 60,
                                       width: 60,
                                       fit: BoxFit.cover,

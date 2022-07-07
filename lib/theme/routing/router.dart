@@ -17,6 +17,9 @@ import 'package:app/screens/auth/signup/steps/signupStepThree.dart';
 import 'package:app/screens/content/messagesContent/messagesView/messagesView.dart';
 import 'package:app/screens/content/messagesContent/userProfile/userProfile.dart';
 
+// vendor
+import 'package:app/screens/vendorView/index.dart';
+
 // content main
 import 'package:app/screens/content/index.dart';
 
@@ -54,6 +57,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     case userProfileScreenRoute:
       return MaterialPageRoute(builder: (context) => const UserProfileScreen());
+
+    case vendorViewScreenRoute:
+      return MaterialPageRoute(builder: (context) => const VendorViewScreen());
 
     default:
       return MaterialPageRoute(builder: (context) => const InitialScreen());

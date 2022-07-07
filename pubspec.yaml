@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.1
   image_picker: ^0.8.5+3
   qr_flutter: ^4.0.0
+  fluttertoast: ^8.0.9
 
 
 

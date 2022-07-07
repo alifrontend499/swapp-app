@@ -30,61 +30,61 @@ class _MessagesContentState extends State<MessagesContent> {
 
   List<Map<String, dynamic>> messages = [
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:24',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:40',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:24',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:40',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:24',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:40',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:24',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:40',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:24',
       'smallMessage': 'I’ll be there in half an hour.'
     },
     {
-      'imgUrl': 'https://static.remove.bg/remove-bg-web/ea4eaf12fdb825d09a927ec03bfcfc723af95931/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg',
+      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
       'userName': 'Chris Mitchell',
       'time': '10:40',
       'smallMessage': 'I’ll be there in half an hour.'

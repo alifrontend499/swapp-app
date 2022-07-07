@@ -56,226 +56,224 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         elevation: 0,
       ),
 
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+            child: Column(
+              children: [
+                ClipRRect(
+                  child: Image.network(
+                    userImgSrc,
+                    height: 60,
+                    width: 60,
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(65.0),
+                ),
+                const SizedBox(height: 15),
+                Text(
+                    userName,
+                    style: userNameStyles,
+                    textAlign: TextAlign.center
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 15),
+
+          Expanded(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.only(top: 30, left: 40, right: 40),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    child: Image.network(
-                      userImgSrc,
-                      height: 60,
-                      width: 60,
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.circular(65.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Name',
+                            style: headTextStyles,
+                          ),
+                          const SizedBox(width: 20),
+
+                          InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(
+                                'Edit',
+                                style: linkTextStyles,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        'Ted Mayborn',
+                        style: descTextStyles,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 15),
-                  Text(
-                      userName,
-                      style: userNameStyles,
-                      textAlign: TextAlign.center
+                  const SizedBox(height: 30),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Title',
+                            style: headTextStyles,
+                          ),
+                          const SizedBox(width: 20),
+
+                          InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(
+                                'Edit',
+                                style: linkTextStyles,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        'Project Manager',
+                        style: descTextStyles,
+                      ),
+                    ],
                   ),
+                  const SizedBox(height: 30),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Industry',
+                            style: headTextStyles,
+                          ),
+                          const SizedBox(width: 20),
+
+                          InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(
+                                'Edit',
+                                style: linkTextStyles,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        'Healthcare',
+                        style: descTextStyles,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Status',
+                            style: headTextStyles,
+                          ),
+                          const SizedBox(width: 20),
+
+                          InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(
+                                'Edit',
+                                style: linkTextStyles,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        '',
+                        style: descTextStyles,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'Subscription',
+                            style: headTextStyles,
+                          ),
+                          const SizedBox(width: 20),
+
+                          InkWell(
+                            onTap: () {},
+                            borderRadius: BorderRadius.circular(5),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                              child: Text(
+                                'Edit',
+                                style: linkTextStyles,
+                              ),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        '£4,99 / month',
+                        style: descTextStyles,
+                      ),
+                      const SizedBox(height: 5),
+
+                      Text(
+                        '**** **** **** 4345',
+                        style: descTextStyles,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
                 ],
               ),
             ),
-
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Name',
-                              style: headTextStyles,
-                            ),
-                            const SizedBox(width: 20),
-
-                            InkWell(
-                              onTap: () {},
-                              borderRadius: BorderRadius.circular(5),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                                child: Text(
-                                  'Edit',
-                                  style: linkTextStyles,
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          'Ted Mayborn',
-                          style: descTextStyles,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Title',
-                              style: headTextStyles,
-                            ),
-                            const SizedBox(width: 20),
-
-                            InkWell(
-                              onTap: () {},
-                              borderRadius: BorderRadius.circular(5),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                                child: Text(
-                                  'Edit',
-                                  style: linkTextStyles,
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          'Project Manager',
-                          style: descTextStyles,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Industry',
-                              style: headTextStyles,
-                            ),
-                            const SizedBox(width: 20),
-
-                            InkWell(
-                              onTap: () {},
-                              borderRadius: BorderRadius.circular(5),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                                child: Text(
-                                  'Edit',
-                                  style: linkTextStyles,
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          'Healthcare',
-                          style: descTextStyles,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Status',
-                              style: headTextStyles,
-                            ),
-                            const SizedBox(width: 20),
-
-                            InkWell(
-                              onTap: () {},
-                              borderRadius: BorderRadius.circular(5),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                                child: Text(
-                                  'Edit',
-                                  style: linkTextStyles,
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          '',
-                          style: descTextStyles,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Subscription',
-                              style: headTextStyles,
-                            ),
-                            const SizedBox(width: 20),
-
-                            InkWell(
-                              onTap: () {},
-                              borderRadius: BorderRadius.circular(5),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
-                                child: Text(
-                                  'Edit',
-                                  style: linkTextStyles,
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          '£4,99 / month',
-                          style: descTextStyles,
-                        ),
-                        const SizedBox(height: 5),
-
-                        Text(
-                          '**** **** **** 4345',
-                          style: descTextStyles,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

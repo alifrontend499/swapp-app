@@ -9,6 +9,9 @@ import 'package:app/theme/colors.dart';
 // qr code
 import 'package:qr_flutter/qr_flutter.dart';
 
+// toast
+import 'package:fluttertoast/fluttertoast.dart';
+
 class SpotsContent extends StatefulWidget {
   const SpotsContent({Key? key}) : super(key: key);
 
@@ -40,6 +43,51 @@ class _SpotsContentState extends State<SpotsContent> {
       letterSpacing: 7
   );
 
+  void showToast(msg) => Fluttertoast.showToast(
+      msg: msg,
+      fontSize: 15
+  );
+
+  // data
+  List<Map<String, dynamic>> favourites = [
+    {
+      'title': 'The White Hart - 0.1 mile',
+      'timeFrom': '10am',
+      'timeTo': '5pm',
+      'offer': 'Bottomless coffee when ordering lunch',
+      'offerType': 'qr',
+      'offerCode': 'testqrcode',
+      'isFav': false,
+    },
+    {
+      'title': 'The new lagoon - 0.2 mile',
+      'timeFrom': '9am',
+      'timeTo': '4pm',
+      'offer': 'Free food one time',
+      'offerType': 'code',
+      'offerCode': 'GETITNOW',
+      'isFav': false,
+    },
+    {
+      'title': 'The White Hart - 0.1 mile',
+      'timeFrom': '10am',
+      'timeTo': '5pm',
+      'offer': 'Bottomless coffee when ordering lunch',
+      'offerType': 'qr',
+      'offerCode': 'testqrcode3',
+      'isFav': false,
+    },
+    {
+      'title': 'The new lagoon - 0.2 mile',
+      'timeFrom': '9am',
+      'timeTo': '4pm',
+      'offer': 'Free food one time',
+      'offerType': 'code',
+      'offerCode': 'FREEFOOD',
+      'isFav': false,
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,390 +105,143 @@ class _SpotsContentState extends State<SpotsContent> {
         elevation: 0,
       ),
 
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        children: [
-          InkWell(
-            // item start
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(width: 1, color: Colors.black38),
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'The White Hart - 0.1 mile ',
-                            style: itemHeadingStyles,
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Hours: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '10am - 5pm',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Offer: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  'Bottomless coffee when ordering lunch',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          InkWell(
-                            onTap: () => showModalBottomSheet(
-                              enableDrag: false,
-                              isDismissible: false,
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              context: context,
-                              builder: (context) => qrCodeBottomSheet('testqr'),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 5),
-                              child: Text(
-                                'QR CODE',
-                                style: itemHeadingStyles,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(
-                        Icons.bookmark,
-                        size: 30,
-                        color: appPrimaryColor,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
+        body: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          itemCount: favourites.length,
+          itemBuilder: (context, index) {
+            final item = favourites[index];
 
-          InkWell(
-            // item start
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+            return InkWell( // item start
+              splashColor: Colors.transparent,
+              borderRadius: BorderRadius.circular(5),
+              onTap: () {},
               child: Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(width: 1, color: Colors.black38),
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'The White Hart - 0.1 mile ',
-                            style: itemHeadingStyles,
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Hours: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '10am - 5pm',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Offer: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  'Bottomless coffee when ordering lunch',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          InkWell(
-                            onTap: () => showModalBottomSheet(
-                              enableDrag: false,
-                              isDismissible: false,
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              context: context,
-                              builder: (context) => qrCodeBottomSheet('Data 2'),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 5),
-                              child: Text(
-                                'QR CODE',
-                                style: itemHeadingStyles,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                child: Container(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(width: 1, color: Colors.black38),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(
-                        Icons.bookmark_outline,
-                        size: 30,
-                        color: appPrimaryColor,
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              item['title'],
+                              style: itemHeadingStyles,
+                            ),
+                            const SizedBox(height: 7),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Hours: ',
+                                  style: descTextBoldStyles,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    item['timeFrom'] + ' - ' + item['timeTo'],
+                                    style: descTextStyles,
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 7),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Offer: ',
+                                  style: descTextBoldStyles,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    item['offer'],
+                                    style: descTextStyles,
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 7),
+                            if (item['offerType'] == 'qr') ...[
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                onTap: () => showModalBottomSheet(
+                                  // enableDrag: false,
+                                  // isDismissible: false,
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  context: context,
+                                  builder: (context) => qrCodeBottomSheet(item['offerCode']),
+                                ),
+                                borderRadius: BorderRadius.circular(5),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                                  child: Text(
+                                    'QR CODE',
+                                    style: itemHeadingStyles,
+                                  ),
+                                ),
+                              ),
+                            ] else ...[
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                onTap: () => showModalBottomSheet(
+                                  // enableDrag: false,
+                                  // isDismissible: false,
+                                  isScrollControlled: true,
+                                  backgroundColor: Colors.transparent,
+                                  context: context,
+                                  builder: (context) => codeBottomSheet(item['offerCode']),
+                                ),
+                                borderRadius: BorderRadius.circular(5),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
+                                  child: Text(
+                                    'CODE',
+                                    style: itemHeadingStyles,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ],
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
 
-          InkWell(
-            // item start
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(width: 1, color: Colors.black38),
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'The White Hart - 0.1 mile ',
-                            style: itemHeadingStyles,
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Hours: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '10am - 5pm',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Offer: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  'Bottomless coffee when ordering lunch',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          InkWell(
-                            onTap: () => showModalBottomSheet(
-                              enableDrag: false,
-                              isDismissible: false,
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              context: context,
-                              builder: (context) => codeBottomSheet('FREECODE'),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 5),
-                              child: Text(
-                                'CODE',
-                                style: itemHeadingStyles,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(
-                        Icons.bookmark,
-                        size: 30,
-                        color: appPrimaryColor,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: IconButton(
+                          splashColor: Colors.transparent,
+                          onPressed: () {
+                            showToast(
+                                (item['isFav'] == true) ? 'Removed from favourites' : 'Added to favourites'
+                            );
 
-          InkWell(
-            // item start
-            onTap: () {},
-            child: Container(
-              padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 20),
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(width: 1, color: Colors.black38),
+                            setState(() {
+                              item['isFav'] = !item['isFav'];
+                            });
+                          },
+                          icon: Icon(
+                            (item['isFav'] == true) ? Icons.bookmark : Icons.bookmark_outline,
+                            size: 30,
+                            color: appPrimaryColor,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'The White Hart - 0.1 mile ',
-                            style: itemHeadingStyles,
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Hours: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '10am - 5pm',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Offer: ',
-                                style: descTextBoldStyles,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  'Bottomless coffee when ordering lunch',
-                                  style: descTextStyles,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(height: 7),
-                          InkWell(
-                            onTap: () => showModalBottomSheet(
-                              enableDrag: false,
-                              isDismissible: false,
-                              isScrollControlled: true,
-                              backgroundColor: Colors.transparent,
-                              context: context,
-                              builder: (context) => codeBottomSheet('GETITNOW'),
-                            ),
-                            borderRadius: BorderRadius.circular(5),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 5),
-                              child: Text(
-                                'CODE',
-                                style: itemHeadingStyles,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Icon(
-                        Icons.bookmark_outline,
-                        size: 30,
-                        color: appPrimaryColor,
-                      ),
-                    )
-                  ],
-                ),
               ),
-            ),
-          ),
-          const SizedBox(height: 15),
-        ],
-      ),
+            );
+          },
+        ),
     );
   }
 
@@ -448,8 +249,10 @@ class _SpotsContentState extends State<SpotsContent> {
   Widget qrCodeBottomSheet(qrCode) => Container(
     padding: const EdgeInsets.only(top: 50),
     child: Container(
-      color: Colors.white,
       padding: const EdgeInsets.all(15),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -491,7 +294,9 @@ class _SpotsContentState extends State<SpotsContent> {
   Widget codeBottomSheet(code) => Container(
     padding: const EdgeInsets.only(top: 50),
     child: Container(
-      color: Colors.white,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+      ),
       padding: const EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

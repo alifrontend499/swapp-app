@@ -13,4 +13,6 @@ const String contentMainScreenRoute = 'content_main_screen';
 const String messagesViewScreenRoute = 'messages_view_screen';
 const String userProfileScreenRoute = 'user_profile_screen';
 
+const String vendorViewScreenRoute = 'vendor_view_screen';
+
 const String forgotPasswordScreenRoute = 'forgot_password_screen';
