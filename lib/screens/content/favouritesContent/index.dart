@@ -12,6 +12,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 // toast
 import 'package:fluttertoast/fluttertoast.dart';
 
+// route
+import 'package:app/theme/routing/routing_constants.dart';
+
 class FavouritesContent extends StatefulWidget {
   const FavouritesContent({Key? key}) : super(key: key);
 
@@ -92,7 +95,7 @@ class _FavouritesContentState extends State<FavouritesContent> {
           return InkWell( // item start
             splashColor: Colors.transparent,
             borderRadius: BorderRadius.circular(5),
-            onTap: () {},
+            onTap: () => Navigator.pushNamed(context, vendorViewScreenRoute),
             child: Container(
               padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
               child: Container(
@@ -212,7 +215,7 @@ class _FavouritesContentState extends State<FavouritesContent> {
                           color: appPrimaryColor,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
