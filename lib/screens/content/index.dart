@@ -1,5 +1,3 @@
-import 'package:app/screens/content/spotsContent/index.dart';
-import 'package:app/screens/content/statusContent/index.dart';
 import 'package:flutter/material.dart';
 
 // colors
@@ -8,6 +6,8 @@ import 'package:app/theme/colors.dart';
 // content screens
 import 'package:app/screens/content/messagesContent/index.dart';
 import 'package:app/screens/content/favouritesContent/index.dart';
+import 'package:app/screens/content/mapContent/index.dart';
+import 'package:app/screens/content/spotsContent/index.dart';
 
 class ContentMainScreen extends StatefulWidget {
   const ContentMainScreen({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class ContentMainScreen extends StatefulWidget {
 class _ContentMainScreenState extends State<ContentMainScreen> {
   int currentIndex = 0;
   final screens= [
-    const StatusContent(),
+    const MapContent(),
     const MessagesContent(),
     const FavouritesContent(),
     const SpotsContent(),

@@ -220,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: additionalTextStyles,
                       textAlign: TextAlign.center,
                     ),
-                    onTap: () => Navigator.pushNamed(context, forgotPasswordScreenRoute),
+                      onTap: () => Navigator.pushNamed(context, forgotPasswordScreenRoute),
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(

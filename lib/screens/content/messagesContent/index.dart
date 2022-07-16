@@ -6,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 // routes
 import 'package:app/theme/routing/routing_constants.dart';
 
+// modal classes
+import 'package:app/screens/content/messagesContent/modal/messages_data.dart';
+
 class MessagesContent extends StatefulWidget {
   const MessagesContent({Key? key}) : super(key: key);
 
@@ -28,67 +31,31 @@ class _MessagesContentState extends State<MessagesContent> {
     fontSize: 16,
   );
 
-  List<Map<String, dynamic>> messages = [
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:24',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:40',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:24',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:40',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:24',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:40',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:24',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:40',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:24',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
-    {
-      'imgUrl': 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
-      'userName': 'Chris Mitchell',
-      'time': '10:40',
-      'smallMessage': 'I’ll be there in half an hour.'
-    },
+  List<MessagesDataItem> messages = [
+    MessagesDataItem(
+      imgUrl: 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
+      userName: 'Chris Mitchell',
+      time: '10:24',
+      smallMessage: 'I’ll be there in half an hour.'
+    ),
+    MessagesDataItem(
+        imgUrl: 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
+        userName: 'Chris Mitchell',
+        time: '10:24',
+        smallMessage: 'I’ll be there in half an hour.'
+    ),
+    MessagesDataItem(
+        imgUrl: 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
+        userName: 'Chris Mitchell',
+        time: '10:24',
+        smallMessage: 'I’ll be there in half an hour.'
+    ),
+    MessagesDataItem(
+        imgUrl: 'https://i.pinimg.com/originals/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg',
+        userName: 'Chris Mitchell',
+        time: '10:24',
+        smallMessage: 'I’ll be there in half an hour.'
+    ),
   ];
 
   @override
@@ -137,7 +104,7 @@ class _MessagesContentState extends State<MessagesContent> {
                       children: [
                         ClipRRect(
                           child: Image.network(
-                            item['imgUrl'],
+                            item.imgUrl,
                             height: 50,
                             width: 50,
                             fit: BoxFit.cover,
@@ -156,13 +123,13 @@ class _MessagesContentState extends State<MessagesContent> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        item['userName'],
+                                        item.userName,
                                         style: userHeadingStyles,
                                       ),
                                     ),
 
                                     Text(
-                                      item['time'],
+                                      item.time,
                                       style: messageTimeStyles,
                                     ),
                                   ],
@@ -170,7 +137,7 @@ class _MessagesContentState extends State<MessagesContent> {
                                 const SizedBox(height: 7),
 
                                 Text(
-                                  item['smallMessage'],
+                                  item.smallMessage,
                                   style: userShortMessageStyles,
                                 ),
                               ],
