@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // --- ROUTES ---
 import 'package:app/theme/routing/routing_constants.dart';
-import 'package:app/screens/initials/index.dart';
+c
 
 // auth
 import 'package:app/screens/auth/login/index.dart';
